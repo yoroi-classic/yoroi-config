@@ -18,13 +18,13 @@
       "display": false
     },
     "yoroiDrep": {
-      "display": true
+      "display": false
     },
     "earnRewardsWithYoroi": {
-      "display": true,
-      "poolId": "6a2eecc8015c24b496c70f60141477f9efcd98cf9dfd0b47d27f5bd5",
-      "poolName": "[YOROI] Yoroi pool",
-      "drepId": "220655f3a1c76788d839212adc459b188b84e680f30ae944c593fa18ae"
+      "display": false,
+      "poolId": "",
+      "poolName": "",
+      "drepId": ""
     }
   },
   "popups": {
@@ -35,7 +35,7 @@
       "display": false
     },
     "poolTransitionDialog": {
-      "display": true
+      "display": false
     },
     "cardanoCardAnnouncement": {
       "display": false
@@ -44,15 +44,8 @@
       "display": false
     },
     "stakingUpdate": {
-      "display": true,
-      "affectedPools": [
-        "pool13mas2wthxs28zftxskcsd8t87jk2w9ntc0u5uflt45sh7lcvs8h",
-        "pool1pmm654jfx088td54ekkkd0j28x6r5gnjdhnutzggursrxjnpk2y",
-        "pool1m0drnjxsvnlesq0rwmur2rh6lenuql57jfzd6cf6aegj2cv7ugy",
-        "pool1xkwnlr34tjrnkz6u4c0p36cju3xuls4dyynsdkf6cv22ksuhz6q",
-        "pool192pfftt48zc4x5aellvpufk6l6zxllpldw0rx82vrhqrqfhhqs2",
-        "pool1kx0jm9ycs3t99tnwafw6w72jkdlzhj5ltxe2nrzkd9x2u5x343h"
-      ]
+      "display": false,
+      "affectedPools": []
     },
     "secondFiTeaser": {
       "display": false
@@ -350,12 +343,7 @@
       "5d16cc1a177b5d9ba9cfa9793b07e60f1fb70fea1f8aef064415d114.494147",
       "f43a62fdc3965df486de8a0d32fe800963589c41b38946602a0dc535.41474958"
     ],
-    "partners": {
-      "dexhunter": "yoroiwallet616464723171793935616335727a39613463393865643365397334357530613579336d717165653933386e78797939766b6b6c6e78643472746e336e666b3861336d707263396b3067636a6e6e35707873736b323435333477366137386d687a736d68346a3039da39a3ee5e6b4b0d3255bfef95601890afd80709",
-      "muesliswap": "emurgo",
-      "minswap": "yoroiwallet",
-      "steelswap": "yoroi-aggregator"
-    }
+    "partners": {}
   },
   "enableTrezorAirdrop": false
 }
