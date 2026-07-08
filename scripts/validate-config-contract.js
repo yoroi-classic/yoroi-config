@@ -61,7 +61,7 @@ const forbiddenActiveStringPatterns = [/emurgo/i];
 const ownedHostnames = new Set(['yoroi-wallet.com', 'www.yoroi-wallet.com', 'yoroi-config.blinklabs.cloud']);
 const ownedHostnameSuffixes = ['.blinklabs.cloud'];
 const localHostnames = new Set(['localhost', '127.0.0.1', '::1', '[::1]']);
-const assetIdPattern = /^(?:\.|[0-9a-f]{56}\.(?:[0-9a-f]{2}){1,32})$/;
+const assetIdPattern = /^(?:\.|[0-9a-f]{56}\.(?:[0-9a-f]{2}){0,32})$/;
 const domainPattern = /^(?:\*\.)?[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
 
 function jsonPath(parts) {
@@ -454,7 +454,7 @@ function validateAssetId(file, value, parts) {
   }
 
   if (!assetIdPattern.test(value)) {
-    fail(file, parts, 'must be "." for ADA or a lowercase policy.asset hex id with a 1-32 byte asset name');
+    fail(file, parts, 'must be "." for ADA or a lowercase policy.asset hex id with a 0-32 byte asset name');
   }
 }
 
