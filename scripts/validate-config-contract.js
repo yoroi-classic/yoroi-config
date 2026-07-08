@@ -58,7 +58,7 @@ const requiredDappKeys = [
 
 const urlLikeKeyPattern = /(?:url|uri|endpoint|baseurl|baseUrl|website)$/i;
 const forbiddenActiveStringPatterns = [/emurgo/i];
-const ownedHostnames = new Set(['yoroi-wallet.com', 'www.yoroi-wallet.com', 'yoroi-config.blinklabs.cloud']);
+const ownedHostnames = new Set(['blinklabs.cloud']);
 const ownedHostnameSuffixes = ['.blinklabs.cloud'];
 const localHostnames = new Set(['localhost', '127.0.0.1', '::1', '[::1]']);
 const assetIdPattern = /^(?:\.|[0-9a-f]{56}\.(?:[0-9a-f]{2}){0,32})$/;
