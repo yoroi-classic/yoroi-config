@@ -61,7 +61,7 @@ const forbiddenActiveStringPatterns = [/emurgo/i];
 const ownedHostnames = new Set(['yoroi-wallet.com', 'www.yoroi-wallet.com', 'yoroi-config.blinklabs.cloud']);
 const ownedHostnameSuffixes = ['.blinklabs.cloud'];
 const localHostnames = new Set(['localhost', '127.0.0.1', '::1', '[::1]']);
-const assetIdPattern = /^(?:\.|[0-9a-f]{56}\.[0-9a-f]+)$/;
+const assetIdPattern = /^(?:\.|[0-9a-f]{56}\.(?:[0-9a-f]{2}){1,32})$/;
 const domainPattern = /^(?:\*\.)?[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
 
 function jsonPath(parts) {
@@ -177,10 +177,10 @@ function requireOwnedOrLocalUrl(file, value, parts) {
     return undefined;
   }
 
-  const isLocal = localHostnames.has(url.hostname);
+  const isLocal = file === 'dev.json' && localHostnames.has(url.hostname);
 
   if (!isLocal && url.protocol !== 'https:') {
-    fail(file, parts, 'must use https unless it points at a local development host');
+    fail(file, parts, 'must use https unless dev.json points at a local development host');
   }
 
   if (!isLocal && !isOwnedHostname(url.hostname)) {
@@ -338,13 +338,13 @@ function validateDappSection(file, section, dapps) {
       fail(file, [...sectionPath, 'recommended'], 'must not be empty');
     }
 
-    dapps.recommended.forEach((dapp, index) => validateDapp(file, section, dapp, [...sectionPath, 'recommended', index]));
+    dapps.recommended.forEach((dapp, index) => validateDapp(file, dapp, [...sectionPath, 'recommended', index]));
   }
 
   validateDappFilters(file, dapps.filters, [...sectionPath, 'filters']);
 }
 
-function validateDapp(file, section, dapp, parts) {
+function validateDapp(file, dapp, parts) {
   if (!requireRecord(file, dapp, parts)) {
     return;
   }
@@ -373,10 +373,6 @@ function validateDapp(file, section, dapp, parts) {
 
   if (hasOwn(dapp, 'isSingleAddress')) {
     requireBoolean(file, dapp.isSingleAddress, [...parts, 'isSingleAddress']);
-  }
-
-  if (section === 'dappsPreprod') {
-    requireHttpsUrl(file, dapp.uri, [...parts, 'uri']);
   }
 }
 
@@ -458,7 +454,7 @@ function validateAssetId(file, value, parts) {
   }
 
   if (!assetIdPattern.test(value)) {
-    fail(file, parts, 'must be "." for ADA or a lowercase policy.asset hex id');
+    fail(file, parts, 'must be "." for ADA or a lowercase policy.asset hex id with a 1-32 byte asset name');
   }
 }
 
