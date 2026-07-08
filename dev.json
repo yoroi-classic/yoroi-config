@@ -21,7 +21,10 @@
       "display": false
     },
     "earnRewardsWithYoroi": {
-      "display": false
+      "display": false,
+      "poolId": "",
+      "poolName": "",
+      "drepId": ""
     }
   },
   "popups": {
