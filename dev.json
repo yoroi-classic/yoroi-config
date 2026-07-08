@@ -32,16 +32,16 @@
       "display": false
     },
     "generalFeaturesAnnouncement": {
-      "display": true
+      "display": false
     },
     "poolTransitionDialog": {
       "display": true
     },
     "cardanoCardAnnouncement": {
-      "display": true
+      "display": false
     },
     "firefoxSupportAnnouncement": {
-      "display": true
+      "display": false
     },
     "stakingUpdate": {
       "display": true,
@@ -55,7 +55,7 @@
       ]
     },
     "secondFiTeaser": {
-      "display": true
+      "display": false
     }
   },
   "features": {
@@ -357,5 +357,5 @@
       "steelswap": "yoroi-aggregator"
     }
   },
-  "enableTrezorAirdrop": true
+  "enableTrezorAirdrop": false
 }
