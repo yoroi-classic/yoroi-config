@@ -4,11 +4,21 @@ This repository contains configuration files used by both the Yoroi Extension an
 
 ## Structure
 
-- `prod.json`: Main production configuration file.
+- `dev.json`: Development remote configuration file.
+- `prod.json`: Production remote configuration file.
+- `bring-cashback-redirect-whitelist.json`: Redirect domain whitelist consumed by the Bring cashback integration.
 
 ## Usage
 
 These configuration files are consumed by the Yoroi applications to manage various settings and parameters.
+
+For the extension-first infrastructure migration, this repository is the owned source for remote configuration served from:
+
+- `https://yoroi-config.blinklabs.cloud/dev.json`
+- `https://yoroi-config.blinklabs.cloud/prod.json`
+- `https://yoroi-config.blinklabs.cloud/bring-cashback-redirect-whitelist.json`
+
+Optional services should remain disabled or pointed at owned endpoints until the corresponding Blink Labs infrastructure is available.
 
 ## Guidelines for Changes
 
