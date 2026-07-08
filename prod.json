@@ -41,7 +41,7 @@
       "display": false
     },
     "firefoxSupportAnnouncement": {
-      "display": true
+      "display": false
     },
     "stakingUpdate": {
       "display": false,
@@ -293,5 +293,5 @@
       "minswap": "yoroiwallet"
     }
   },
-  "enableTrezorAirdrop": true
+  "enableTrezorAirdrop": false
 }
