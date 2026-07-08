@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: config contract tests
+        run: node scripts/validate-config-contract.js
+
       - name: json-yaml-validate
         id: json-yaml-validate
         uses: GrantBirki/json-yaml-validate@v3.3.2 # replace with the latest version

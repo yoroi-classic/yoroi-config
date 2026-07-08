@@ -20,6 +20,10 @@ For the extension-first infrastructure migration, this repository is the owned s
 
 Optional services should remain disabled or pointed at owned endpoints until the corresponding Blink Labs infrastructure is available.
 
+## Validation
+
+Run `node scripts/validate-config-contract.js` before opening a PR. The contract check validates JSON parseability, expected dev/prod sections, dapp URL/origin formats, image references, Bring whitelist domains, and guards against legacy active service defaults.
+
 ## Guidelines for Changes
 
 When proposing changes to the configuration files, please adhere to the following guidelines:
